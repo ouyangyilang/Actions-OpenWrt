@@ -12,3 +12,7 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.254.254/g' package/base-files/files/bin/config_generate
+
+# openwrt-vlmcsd
+git clone https://github.com/cokebar/openwrt-vlmcsd.git package/feeds/packages/openwrt-vlmcsd -b master
+git clone https://github.com/cokebar/luci-app-vlmcsd.git package/feeds/luci/luci-app-vlmcsd -b master
