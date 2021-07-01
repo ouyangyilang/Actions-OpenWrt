@@ -19,6 +19,9 @@ sed -i 's/root::0:0:99999:7:::/root:$1$EQxGTyLQ$nYH8qlpXbvjV6DJeJ2nrp\/:18686:0:
 # Modify default Host name
 sed -i 's/OpenWrt/WR703N/g' package/base-files/files/bin/config_generate
 
+# Enable Wifi
+sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 # Modify default Wifi SSID
 sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
