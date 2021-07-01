@@ -28,9 +28,6 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 # Modify default Wifi SSID
 sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# Flash
-sed -i 's/4mlzma/8mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
-
 # helloworld
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/feeds/packages/lua-maxminddb -b master
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/feeds/luci/luci-app-vssr -b master
