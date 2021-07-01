@@ -17,10 +17,10 @@ sed -i 's/192.168.1.1/192.168.254.254/g' package/base-files/files/bin/config_gen
 sed -i 's/root::0:0:99999:7:::/root:$1$EQxGTyLQ$nYH8qlpXbvjV6DJeJ2nrp\/:18686:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Modify default Host name
-sed -i 's/OpenWrt/WR703N/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/WR802N/g' package/base-files/files/bin/config_generate
 
 # Modify default Wifi SSID
-sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/WR802N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Flash
 sed -i 's/4mlzma/16mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
