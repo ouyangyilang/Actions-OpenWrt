@@ -22,9 +22,6 @@ sed -i 's/OpenWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 # Modify default Wifi SSID
 sed -i 's/OpenWrt/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# Flash
-sed -i 's/4mlzma/16mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
-
 # openwrt-vlmcsd
 #git clone https://github.com/cokebar/openwrt-vlmcsd.git package/feeds/packages/openwrt-vlmcsd -b master
 #git clone https://github.com/cokebar/luci-app-vlmcsd.git package/feeds/luci/luci-app-vlmcsd -b master
