@@ -23,7 +23,7 @@ sed -i 's/OpenWrt/WR703N/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Flash
-sed -i 's/4mlzma/8mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
+sed -i 's/4mlzma/16mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
 
 # openwrt-vlmcsd
 git clone https://github.com/cokebar/openwrt-vlmcsd.git package/feeds/packages/openwrt-vlmcsd -b master
