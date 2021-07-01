@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.254.254/g' package/base-files/files/bin/config_gen
 sed -i 's/root::0:0:99999:7:::/root:$1$EQxGTyLQ$nYH8qlpXbvjV6DJeJ2nrp\/:18686:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Modify default Host name
-sed -i 's/OpenWrt/WR703N/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/MW4530R/g' package/base-files/files/bin/config_generate
 
 # Modify Timezone
 sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
@@ -26,8 +26,9 @@ sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/b
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Modify default Wifi SSID
-sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/MW4530R/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# helloworld
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/feeds/packages/lua-maxminddb -b master
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/feeds/luci/luci-app-vssr -b master
+# Flash
+sed -i 's/7d0000/fd0000/g' target/linux/ath79/dts/ar9344_tplink_tl-wdrxxxx.dtsi
+sed -i 's/7f0000/ff0000/g' target/linux/ath79/dts/ar9344_tplink_tl-wdrxxxx.dtsi
+sed -i 's/8mlzma/16mlzma/g' target/linux/ath79/image/generic-tp-link.mk
