@@ -20,7 +20,7 @@ sed -i 's/root::0:0:99999:7:::/root:$1$EQxGTyLQ$nYH8qlpXbvjV6DJeJ2nrp\/:18686:0:
 sed -i 's/OpenWrt/MW4530R/g' package/base-files/files/bin/config_generate
 
 # Modify Timezone
-sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
+#sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 # Enable Wifi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
