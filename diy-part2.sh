@@ -29,7 +29,9 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 sed -i 's/OpenWrt/WR802N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Flash
-sed -i 's/4mlzma/16mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
+sed -i 's/3d0000/fd0000/g' target/linux/ath79/dts/qca9533_tplink_tl-wr802n.dtsi
+sed -i 's/3f0000/ff0000/g' target/linux/ath79/dts/qca9533_tplink_tl-wr802n.dtsi
+sed -i 's/4mlzma/16mlzma/g' target/linux/ath79/image/tiny-tp-link.mk
 
 # openwrt-vlmcsd
 git clone https://github.com/cokebar/openwrt-vlmcsd.git package/feeds/packages/openwrt-vlmcsd -b master
