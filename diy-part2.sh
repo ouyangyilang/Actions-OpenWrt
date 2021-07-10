@@ -22,11 +22,12 @@ sed -i 's/OpenWrt/WR703N/g' package/base-files/files/bin/config_generate
 # Modify Timezone
 sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
-# Enable Wifi
+# Wifi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
-# Modify default Wifi SSID
-sed -i 's/OpenWrt/WR703N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/disabled=0/a \\t\t\tset wireless.radio${devidx}.country=CN' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/ssid=OpenWrt/ssid=WR802N/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/encryption=psk2/a \\t\t\tset wireless.default_radio${devidx}.key=13690275912' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Flash
 sed -i 's/4mlzma/16mlzma/g' target/linux/ar71xx/image/tiny-tp-link.mk
