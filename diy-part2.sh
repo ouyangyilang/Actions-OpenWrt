@@ -33,3 +33,6 @@ sed -i 's/8mlzma/16mlzma/g' target/linux/ath79/image/generic.mk
 # luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb -b master
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr -b master
+rm -r -f  package/feeds/helloworld/luci-app-ssr-plus
+sed -i 's/+simple-obfs//g' package/lean/luci-app-vssr/Makefile
+sed -i 's/+wol//g' package/feeds/luci/luci-app-wol/Makefile
