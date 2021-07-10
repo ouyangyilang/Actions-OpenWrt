@@ -19,14 +19,11 @@ sed -i 's/root::0:0:99999:7:::/root:$1$EQxGTyLQ$nYH8qlpXbvjV6DJeJ2nrp\/:18686:0:
 # Modify default Host name
 sed -i 's/OpenWrt/MW4530R/g' package/base-files/files/bin/config_generate
 
-# Modify Timezone
-#sed -i "s/timezone='UTC'/zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
-
-# Enable Wifi
-# sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
-# Modify default Wifi SSID
-sed -i 's/OpenWrt/MW4530R/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# Wifi
+sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/ssid=OpenWrt/ssid=MW4530R/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/encryption=psk2/a \\t\t\tset wireless.default_radio${devidx}.key=13690275912' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Flash
 sed -i 's/7d0000/fd0000/g' target/linux/ath79/dts/ar9344_tplink_tl-wdrxxxx.dtsi
