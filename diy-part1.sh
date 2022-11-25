@@ -18,8 +18,8 @@
 git clone https://github.com/cokebar/openwrt-vlmcsd package/vlmcsd/openwrt-vlmcsd
 git clone https://github.com/cokebar/luci-app-vlmcsd package/vlmcsd/luci-app-vlmcsd
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-mkdir -p package/helloworld
+git clone https://github.com/fw876/helloworld package/helloworld
+git clone https://github.com/MeIsReallyBa/Redmi2100-WIFI-ProprietaryDriver-linux5.4.git package/MTK-Driver
 for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
   svn checkout "https://github.com/immortalwrt/packages/trunk/net/$i" "package/helloworld/$i"; \
 done
